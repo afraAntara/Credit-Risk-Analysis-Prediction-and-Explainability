@@ -58,15 +58,61 @@ To ensure **robust performance**, we trained multiple models and validated them 
 | **Bootstrapping** | Estimates model uncertainty with repeated sampling. |
 
 📊 **Validation results are plotted for easy comparison.**  
-```python
-# Example visualization
-methods = ["K-Fold", "Stratified K-Fold", "Monte Carlo", "Bootstrapping"]
-accuracies = [k_fold_accuracy, strat_k_fold_accuracy, monte_carlo_accuracy, bootstrap_mean]
+## 📊 Model Explainability: SHAP & LIME
 
-plt.figure(figsize=(10,5))
-plt.bar(methods, accuracies, color='teal')
-plt.xlabel("Validation Method")
-plt.ylabel("Accuracy")
-plt.title("Comparison of Model Validation Methods")
-plt.xticks(rotation=45)
-plt.show()
+To make the predictions **interpretable**, we used **SHAP (global feature importance)** and **LIME (local instance-level explanations).**
+
+---
+
+### 🔹 SHAP (Global Model Insights)
+SHAP (SHapley Additive Explanations) helps **understand how each feature influences the model's predictions** by assigning an impact value to each feature.
+
+- **Higher SHAP value** → Greater influence on model decisions.
+- Features such as **loan-to-income ratio, credit history length, and loan grade** were among the most influential.
+- The SHAP summary plot provides an **overview of feature importance and impact direction**.
+
+🖼️ **Generated SHAP Plot**  
+*(Visualizing the overall impact of each feature on predictions.)*
+
+---
+
+### 🔹 LIME (Instance-Specific Explanations)
+LIME (Local Interpretable Model-Agnostic Explanations) explains **why a specific applicant was classified as a defaulter or non-defaulter**.
+
+- Identifies **which features pushed the prediction toward default or non-default**.
+- Provides **local interpretability**, showing how changes in feature values affect a specific prediction.
+- Useful for **loan officers, financial analysts, and regulatory auditing**.
+
+🖼️ **Generated LIME Explanation**  
+*(Explaining individual loan applications and model decision-making.)*
+
+---
+
+## 📌 Key Findings
+- **Loan-to-Income Ratio** is the most significant factor in predicting default risk.  
+- **Longer credit history** reduces the probability of default.  
+- **Higher interest rates** increase the risk of default.  
+- **Loan intent (purpose of the loan)** plays a crucial role in classification.  
+
+---
+
+## 📦 Installation & Usage
+
+### 1️⃣ Install Dependencies  
+Ensure you have all required libraries installed.
+
+### 2️⃣ Run the Training Script  
+Train the model using the preprocessed dataset.
+
+### 3️⃣ Run SHAP & LIME Explainability  
+Generate global and instance-specific explanations for the model.
+
+---
+
+## 📌 Future Improvements
+🔹 **Deploying a Streamlit Dashboard** for interactive visualization.  
+🔹 **Fine-tuning models** for better recall on defaulters.  
+🔹 **Testing alternative feature selection methods** to improve model accuracy.  
+
+---
+
