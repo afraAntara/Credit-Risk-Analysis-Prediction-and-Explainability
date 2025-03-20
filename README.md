@@ -58,6 +58,8 @@ To ensure **robust performance**, we trained multiple models and validated them 
 | **Bootstrapping** | Estimates model uncertainty with repeated sampling. |
 
 📊 **Validation results are plotted for easy comparison.**  
+![Validation Method Comparison for XGBoost Plot Model](validation_plot.png)
+
 ## 📊 Model Explainability: SHAP & LIME
 
 To make the predictions **interpretable**, we used **SHAP (global feature importance)** and **LIME (local instance-level explanations).**
@@ -72,7 +74,7 @@ SHAP (SHapley Additive Explanations) helps **understand how each feature influen
 - The SHAP summary plot provides an **overview of feature importance and impact direction**.
 
 🖼️ **Generated SHAP Plot**  
-*(Visualizing the overall impact of each feature on predictions.)*
+![SHAP Summary Plot](shap_summary.png)
 
 ---
 
@@ -84,7 +86,7 @@ LIME (Local Interpretable Model-Agnostic Explanations) explains **why a specific
 - Useful for **loan officers, financial analysts, and regulatory auditing**.
 
 🖼️ **Generated LIME Explanation**  
-*(Explaining individual loan applications and model decision-making.)*
+![Lime Explanation Plot](lime_explanation.html)
 
 ---
 
