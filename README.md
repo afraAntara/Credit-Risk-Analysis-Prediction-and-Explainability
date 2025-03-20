@@ -86,7 +86,7 @@ LIME (Local Interpretable Model-Agnostic Explanations) explains **why a specific
 - Useful for **loan officers, financial analysts, and regulatory auditing**.
 
 🖼️ **Generated LIME Explanation**  
-![Lime Explanation Plot](lime_explanation.html)
+![Lime Explanation Plot](lime_explanation.png)
 
 ---
 
